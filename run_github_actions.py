@@ -72,6 +72,18 @@ def init_tables(conn):
         """)
 
 
+def clean_old_records(conn, days_to_keep=3):
+    """Automatically cleans up records older than days_to_keep to keep DB fast and light."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"DELETE FROM scraped_market_data WHERE scraped_at < NOW() - INTERVAL {days_to_keep} DAY LIMIT 20000")
+            deleted = cur.rowcount
+            if deleted > 0:
+                print(f"  [DB CLEANUP] Automatically purged {deleted} old records.")
+    except Exception as e:
+        pass
+
+
 def push_data(conn, items):
     if not items:
         return 0
@@ -182,6 +194,10 @@ def main():
             print(f"  Summary: {summary.get('gainers_count', 0)} Gainers | "
                   f"{summary.get('losers_count', 0)} Losers | "
                   f"Avg Change: {summary.get('avg_change_percent', 0.0)}%")
+
+            # Periodically prune stale data older than 3 days
+            if cycle % 50 == 0:
+                clean_old_records(conn, 3)
 
         except Exception as e:
             print(f"  [ERROR] {e}")
