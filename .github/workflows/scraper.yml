@@ -1,6 +1,9 @@
 name: Continuous Market Data Scraper
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Backup trigger every 4 hours in case runner stops
     - cron: '0 */4 * * *'
