@@ -2,12 +2,17 @@ name: Continuous Market Data Scraper
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    # Backup trigger every 4 hours in case runner stops
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 concurrency:
   group: market-scraper
   cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: read
 
 jobs:
   scrape-and-push:
@@ -40,9 +45,19 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD || 'Myogoku@2026' }}
           DB_NAME: ${{ secrets.DB_NAME || 'financei1_db' }}
           SCRAPE_INTERVAL: '15'
-          MAX_RUNTIME_MINUTES: '35'
+          MAX_RUNTIME_MINUTES: '330'
         run: |
           if [ -d "stock scrapper" ]; then
             cd "stock scrapper"
           fi
           python -u run_github_actions.py
+
+      - name: Automatically re-trigger next continuous session
+        if: always()
+        run: |
+          echo "Triggering next continuous scraper session..."
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/scraper.yml/dispatches \
+            -d '{"ref":"main"}'
