@@ -1,0 +1,48 @@
+name: Continuous Market Data Scraper
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: market-scraper
+  cancel-in-progress: true
+
+jobs:
+  scrape-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f "requirements.txt" ]; then
+            pip install -r requirements.txt
+          elif [ -f "stock scrapper/requirements.txt" ]; then
+            pip install -r "stock scrapper/requirements.txt"
+          fi
+
+      - name: Run Cloud Scraper
+        env:
+          DB_HOST: ${{ secrets.DB_HOST || '45.199.139.15' }}
+          DB_PORT: ${{ secrets.DB_PORT || '3306' }}
+          DB_USER: ${{ secrets.DB_USER || 'financei1_financeintels' }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD || 'Myogoku@2026' }}
+          DB_NAME: ${{ secrets.DB_NAME || 'financei1_db' }}
+          SCRAPE_INTERVAL: '15'
+          MAX_RUNTIME_MINUTES: '35'
+        run: |
+          if [ -d "stock scrapper" ]; then
+            cd "stock scrapper"
+          fi
+          python -u run_github_actions.py

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradingEconomics Live Scraper Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <div class="logo-icon">📊</div>
+        <div>
+          <h1>TradingEconomics Scraper</h1>
+          <span>Live Stock & Commodity Intelligence</span>
+        </div>
+      </div>
+      
+      <div class="nav-actions">
+        <div class="refresh-status">
+          <span class="status-dot"></span>
+          <span id="auto-refresh-timer">⚡ Auto-updating in 5s</span>
+        </div>
+        <div class="refresh-status" style="opacity: 0.8; font-size: 0.8rem;">
+          <span id="last-updated">Updating...</span>
+        </div>
+        <button id="btn-autostart" class="btn" title="Toggle Auto-Start when PC turns on">
+          ⚙️ Auto-Start: Checking...
+        </button>
+        <button id="btn-force-refresh" class="btn">
+          🔄 Refresh Now
+        </button>
+
+        <div class="dropdown">
+          <button class="btn btn-primary" id="btn-export-menu">
+            ⬇️ Export Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Summary Metrics Cards -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Total Instruments</div>
+        <div class="metric-value" id="metric-total">--</div>
+        <div class="metric-sub" id="metric-types">Stocks & Commodities</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Top Gainer</div>
+        <div class="metric-value" style="color: var(--success);" id="metric-gainer-name">--</div>
+        <div class="metric-sub" id="metric-gainer-val">--</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Top Loser</div>
+        <div class="metric-value" style="color: var(--danger);" id="metric-loser-name">--</div>
+        <div class="metric-sub" id="metric-loser-val">--</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Market Sentiment</div>
+        <div class="metric-value" id="metric-sentiment">--</div>
+        <div class="metric-sub" id="metric-ratio">-- Gainers / -- Losers</div>
+      </div>
+    </div>
+
+    <!-- Interactive Filters & Controls -->
+    <div class="controls-section">
+      <div class="tab-group">
+        <button class="tab-btn active" data-type="all">All Markets</button>
+        <button class="tab-btn" data-type="stocks">Stocks Only</button>
+        <button class="tab-btn" data-type="commodities">Commodities Only</button>
+        <button class="tab-btn" data-type="crypto">Crypto Only</button>
+      </div>
+
+      <div class="filter-group">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Search Symbol, Market, Energy...">
+        <select id="select-category" class="select-input">
+          <option value="all">All Categories</option>
+        </select>
+        <select id="select-sort" class="select-input">
+          <option value="change_percent_desc">Top Gainers (% Chg)</option>
+          <option value="change_percent_asc">Top Losers (% Chg)</option>
+          <option value="name_asc">Name (A-Z)</option>
+          <option value="price_desc">Price (High-Low)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div id="category-pills" class="category-pills">
+      <div class="pill active" data-cat="all">All Categories</div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="table-container">
+      <div id="loading" class="loading-spinner">
+        <div class="spinner"></div>
+        Scraping live market data directly from TradingEconomics...
+      </div>
+      <table id="market-table" class="data-table" style="display: none;">
+        <thead>
+          <tr>
+            <th data-sort="type">Type</th>
+            <th data-sort="category">Category</th>
+            <th data-sort="name">Name / Symbol</th>
+            <th data-sort="price">Price</th>
+            <th data-sort="change">Day Change</th>
+            <th data-sort="change_percent">% Change</th>
+            <th data-sort="weekly_percent">Weekly %</th>
+            <th data-sort="monthly_percent">Monthly %</th>
+            <th data-sort="ytd_percent">YTD %</th>
+            <th data-sort="date">Date</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Rows inserted dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Visual Charts -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-title">🔥 Top Gainers (% Change)</div>
+        <canvas id="gainersChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">🔻 Top Losers (% Change)</div>
+        <canvas id="losersChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

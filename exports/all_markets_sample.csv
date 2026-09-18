@@ -1,0 +1,239 @@
+type,category,name,symbol,unit,price,change,change_percent,weekly_percent,monthly_percent,ytd_percent,yoy_percent,date,url,scraped_at
+stock,Major,US500,US500,Index Points,7728.76,5.21,0.07,3.91,3.0,12.9,21.9,Aug/06,https://tradingeconomics.com/united-states/stock-market,2026-08-06T12:18:04.597278
+stock,Major,US30,US30,Index Points,54460.0,111.0,0.2,4.31,2.9,13.31,23.86,Aug/06,https://tradingeconomics.com/indu:ind,2026-08-06T12:18:04.597384
+stock,Major,US100,US100,Index Points,29330.0,158.0,-0.54,4.35,0.54,16.16,25.4,Aug/06,https://tradingeconomics.com/us100:ind,2026-08-06T12:18:04.597457
+stock,Major,JP225,JP225,Index Points,65534.0,766.0,-1.16,5.93,-3.99,30.18,59.61,Aug/06,https://tradingeconomics.com/japan/stock-market,2026-08-06T12:18:04.597526
+stock,Major,GB100,GB100,Index Points,10888.0,9.0,0.08,-0.18,2.22,9.64,18.81,Aug/05,https://tradingeconomics.com/united-kingdom/stock-market,2026-08-06T12:18:04.597609
+stock,Major,DE40,DE40,Index Points,26198.0,72.0,0.28,2.29,2.88,6.97,8.29,Aug/06,https://tradingeconomics.com/germany/stock-market,2026-08-06T12:18:04.597679
+stock,Major,FR40,FR40,Index Points,8700.0,30.0,0.35,3.46,2.59,6.75,13.94,Aug/06,https://tradingeconomics.com/france/stock-market,2026-08-06T12:18:04.597749
+stock,Major,IT40,IT40,Index Points,53569.0,122.0,0.23,2.81,2.12,19.19,29.42,Aug/06,https://tradingeconomics.com/italy/stock-market,2026-08-06T12:18:04.597829
+stock,Major,ES35,ES35,Index Points,20105.0,48.0,0.24,3.56,2.14,16.16,38.3,Aug/06,https://tradingeconomics.com/spain/stock-market,2026-08-06T12:18:04.597897
+stock,Major,ASX200,ASX200,Index Points,9272.0,44.0,0.47,3.39,5.31,6.4,4.98,Aug/06,https://tradingeconomics.com/australia/stock-market,2026-08-06T12:18:04.597957
+stock,Major,SHANGHAI,SHANGHAI,Index Points,3894.0,16.0,0.41,2.36,-2.4,-1.88,7.0,Aug/06,https://tradingeconomics.com/china/stock-market,2026-08-06T12:18:04.598027
+stock,Major,SENSEX,SENSEX,Index Points,78850.0,269.0,0.34,1.18,0.86,-7.48,-2.2,Aug/06,https://tradingeconomics.com/india/stock-market,2026-08-06T12:18:04.598108
+stock,Major,TSX,TSX,Index Points,36146.0,345.0,0.96,2.3,2.65,13.98,29.46,Aug/05,https://tradingeconomics.com/canada/stock-market,2026-08-06T12:18:04.598171
+stock,Major,MOEX,MOEX,Index Points,2302.0,32.0,1.43,2.88,4.9,-16.81,-16.75,Aug/05,https://tradingeconomics.com/russia/stock-market,2026-08-06T12:18:04.598235
+stock,Major,IBOVESPA,IBOVESPA,Index Points,177726.0,169.0,-0.09,2.21,3.06,10.3,32.1,Aug/05,https://tradingeconomics.com/brazil/stock-market,2026-08-06T12:18:04.598295
+stock,Major,IPC,IPC,Index Points,66525.0,308.0,-0.46,0.07,-1.4,3.51,16.4,Aug/05,https://tradingeconomics.com/mexico/stock-market,2026-08-06T12:18:04.598355
+stock,Major,NL25,NL25,Index Points,1110.0,2.0,-0.14,1.53,2.53,16.66,25.55,Aug/06,https://tradingeconomics.com/netherlands/stock-market,2026-08-06T12:18:04.598416
+stock,Major,CH20,CH20,Index Points,14552.0,88.0,0.61,0.45,1.74,9.68,23.79,Aug/05,https://tradingeconomics.com/switzerland/stock-market,2026-08-06T12:18:04.598481
+stock,Major,SAALL,SAALL,Index Points,115416.0,1159.0,1.01,4.51,3.82,-0.36,15.24,Aug/05,https://tradingeconomics.com/south-africa/stock-market,2026-08-06T12:18:04.598540
+stock,Major,STI,STI,Index Points,5626.0,45.0,0.81,-0.83,5.32,21.1,32.13,Aug/06,https://tradingeconomics.com/singapore/stock-market,2026-08-06T12:18:04.598605
+stock,Major,HK50,HK50,Index Points,25461.0,455.0,-1.75,-1.54,8.36,-0.66,1.51,Aug/06,https://tradingeconomics.com/hong-kong/stock-market,2026-08-06T12:18:04.598673
+stock,Major,NZX 50,NZX 50,Index Points,13935.0,63.0,-0.45,1.25,1.25,2.85,8.13,Aug/06,https://tradingeconomics.com/new-zealand/stock-market,2026-08-06T12:18:04.598733
+stock,Major,EU50,EU50,Index Points,6498.0,18.0,0.27,2.42,2.82,12.2,21.86,Aug/06,https://tradingeconomics.com/euro-area/stock-market,2026-08-06T12:18:04.598798
+stock,Europe,GB100,GB100,Index Points,10888.0,9.0,0.08,-0.18,2.22,9.64,18.81,Aug/05,https://tradingeconomics.com/united-kingdom/stock-market,2026-08-06T12:18:04.599445
+stock,Europe,DE40,DE40,Index Points,26198.0,72.0,0.28,2.29,2.88,6.97,8.29,Aug/06,https://tradingeconomics.com/germany/stock-market,2026-08-06T12:18:04.599508
+stock,Europe,FR40,FR40,Index Points,8700.0,30.0,0.35,3.46,2.59,6.75,13.94,Aug/06,https://tradingeconomics.com/france/stock-market,2026-08-06T12:18:04.599567
+stock,Europe,IT40,IT40,Index Points,53569.0,122.0,0.23,2.81,2.12,19.19,29.42,Aug/06,https://tradingeconomics.com/italy/stock-market,2026-08-06T12:18:04.599639
+stock,Europe,ES35,ES35,Index Points,20105.0,48.0,0.24,3.56,2.14,16.16,38.3,Aug/06,https://tradingeconomics.com/spain/stock-market,2026-08-06T12:18:04.599701
+stock,Europe,MOEX,MOEX,Index Points,2302.0,32.0,1.43,2.88,4.9,-16.81,-16.75,Aug/05,https://tradingeconomics.com/russia/stock-market,2026-08-06T12:18:04.599759
+stock,Europe,NL25,NL25,Index Points,1110.0,2.0,-0.14,1.53,2.53,16.66,25.55,Aug/06,https://tradingeconomics.com/netherlands/stock-market,2026-08-06T12:18:04.599817
+stock,Europe,BIST 100,BIST 100,Index Points,13703.0,15.0,0.11,1.49,-5.0,21.68,25.71,Aug/05,https://tradingeconomics.com/turkey/stock-market,2026-08-06T12:18:04.599875
+stock,Europe,CH20,CH20,Index Points,14552.0,88.0,0.61,0.45,1.74,9.68,23.79,Aug/05,https://tradingeconomics.com/switzerland/stock-market,2026-08-06T12:18:04.599933
+stock,Europe,Stockholm 30,Stockholm 30,Index Points,3327.0,1.0,0.02,3.35,2.82,15.4,29.63,Aug/05,https://tradingeconomics.com/sweden/stock-market,2026-08-06T12:18:04.599990
+stock,Europe,WIG,WIG,Index Points,151086.0,399.0,-0.26,4.31,8.17,28.87,39.56,Aug/05,https://tradingeconomics.com/poland/stock-market,2026-08-06T12:18:04.600047
+stock,Europe,BE20,BE20,Index Points,5776.0,69.0,1.21,0.84,0.76,13.74,24.02,Aug/05,https://tradingeconomics.com/belgium/stock-market,2026-08-06T12:18:04.600104
+stock,Europe,Oslo,Oslo,Index Points,2374.0,8.0,-0.35,-0.05,4.97,22.27,26.26,Aug/05,https://tradingeconomics.com/norway/stock-market,2026-08-06T12:18:04.600162
+stock,Europe,ATX,ATX,Index Points,6704.0,47.0,0.7,6.4,2.11,25.86,47.08,Aug/05,https://tradingeconomics.com/austria/stock-market,2026-08-06T12:18:04.600220
+stock,Europe,Copenhagen,Copenhagen,Index Points,1567.0,29.0,-1.81,-5.0,-4.83,-2.57,9.1,Aug/05,https://tradingeconomics.com/denmark/stock-market,2026-08-06T12:18:04.600283
+stock,Europe,Helsinki,Helsinki,Index Points,13180.0,113.0,-0.85,1.38,-2.48,6.81,23.44,Aug/05,https://tradingeconomics.com/hex:ind,2026-08-06T12:18:04.600341
+stock,Europe,Helsinki 25,Helsinki 25,Index Points,6221.0,38.0,-0.61,0.83,0.32,9.08,28.39,Aug/05,https://tradingeconomics.com/finland/stock-market,2026-08-06T12:18:04.600399
+stock,Europe,ISEQ,ISEQ,Index Points,14016.0,217.0,1.57,3.36,0.39,7.0,23.4,Aug/05,https://tradingeconomics.com/ireland/stock-market,2026-08-06T12:18:04.600456
+stock,Europe,Athens General,Athens General,Index Points,2624.0,5.0,-0.18,3.3,2.48,23.73,28.66,Aug/05,https://tradingeconomics.com/greece/stock-market,2026-08-06T12:18:04.600514
+stock,Europe,PSI Geral,PSI Geral,Index Points,6171.0,5.0,-0.09,1.23,-0.26,14.96,21.9,Aug/05,https://tradingeconomics.com/bvlx:ind,2026-08-06T12:18:04.600571
+stock,Europe,PSI,PSI,Index Points,9176.0,7.0,0.08,1.4,-0.45,11.04,18.53,Aug/05,https://tradingeconomics.com/portugal/stock-market,2026-08-06T12:18:04.600630
+stock,Europe,PX,PX,Index Points,2754.0,15.0,-0.53,2.64,5.4,2.56,21.43,Aug/05,https://tradingeconomics.com/czech-republic/stock-market,2026-08-06T12:18:04.600688
+stock,Europe,BET,BET,Index Points,36070.0,207.0,-0.57,-0.45,5.85,47.59,76.03,Aug/05,https://tradingeconomics.com/romania/stock-market,2026-08-06T12:18:04.600746
+stock,Europe,BUX,BUX,Index Points,148086.0,999.0,-0.67,2.07,3.13,33.37,46.47,Aug/05,https://tradingeconomics.com/hungary/stock-market,2026-08-06T12:18:04.600803
+stock,Europe,SAX,SAX,Index Points,324.0,11.0,-3.14,-3.14,-8.52,10.32,16.27,Aug/05,https://tradingeconomics.com/slovakia/stock-market,2026-08-06T12:18:04.600879
+stock,Europe,LuxX,LuxX,Index Points,2016.0,5.0,-0.26,-0.92,-4.3,12.31,29.21,Aug/05,https://tradingeconomics.com/luxembourg/stock-market,2026-08-06T12:18:04.600937
+stock,Europe,CROBEX,CROBEX,Index Points,4437.0,1.0,0.01,-0.67,-1.4,15.02,18.8,Aug/04,https://tradingeconomics.com/croatia/stock-market,2026-08-06T12:18:04.600997
+stock,Europe,SOFIX,SOFIX,Index Points,1311.0,1.0,-0.08,1.03,4.5,13.38,26.0,Aug/05,https://tradingeconomics.com/bulgaria/stock-market,2026-08-06T12:18:04.601057
+stock,Europe,SBITOP,SBITOP,Index Points,3251.0,20.0,-0.6,1.29,4.73,29.84,33.4,Aug/05,https://tradingeconomics.com/slovenia/stock-market,2026-08-06T12:18:04.601116
+stock,Europe,Vilnius,Vilnius,Index Points,1501.0,4.0,-0.27,-0.25,2.0,12.22,24.4,Aug/05,https://tradingeconomics.com/lithuania/stock-market,2026-08-06T12:18:04.601176
+stock,Europe,BELEX 15,BELEX 15,Index Points,1235.0,2.0,0.18,2.71,2.7,-3.13,1.16,Aug/05,https://tradingeconomics.com/serbia/stock-market,2026-08-06T12:18:04.601236
+stock,Europe,EU600,EU600,Index Points,657.14,0.0,0.0,1.11,1.68,10.86,20.34,Aug/06,https://tradingeconomics.com/stoxx:ind,2026-08-06T12:18:04.601300
+stock,Europe,EU100,EU100,Index Points,1958.0,0.0,-0.01,3.04,1.21,13.77,25.28,Aug/05,https://tradingeconomics.com/n100:ind,2026-08-06T12:18:04.601359
+stock,Europe,EU50,EU50,Index Points,6498.0,18.0,0.27,2.42,2.82,12.2,21.86,Aug/06,https://tradingeconomics.com/euro-area/stock-market,2026-08-06T12:18:04.601422
+stock,Europe,EU350,EU350,Index Points,2670.85,0.25,0.01,1.85,0.98,11.09,22.12,Aug/05,https://tradingeconomics.com/spe350:ind,2026-08-06T12:18:04.601485
+stock,Europe,SASX 10,SASX 10,Index Points,1534.0,8.0,-0.52,-0.19,0.52,1.07,6.55,Aug/05,https://tradingeconomics.com/bosnia-and-herzegovina/stock-market,2026-08-06T12:18:04.601544
+stock,Europe,CSE General,CSE General,Index Points,318.0,1.0,-0.3,2.75,1.55,14.37,15.25,Aug/05,https://tradingeconomics.com/cyprus/stock-market,2026-08-06T12:18:04.601611
+stock,Europe,Tallinn,Tallinn,Index Points,2154.0,0.0,-0.01,0.42,2.43,4.96,5.89,Aug/05,https://tradingeconomics.com/estonia/stock-market,2026-08-06T12:18:04.601673
+stock,Europe,Riga,Riga,Index Points,925.0,3.0,-0.32,0.91,2.18,-0.03,1.07,Aug/05,https://tradingeconomics.com/latvia/stock-market,2026-08-06T12:18:04.601732
+stock,Europe,ICEX,ICEX,Index Points,2048.0,11.0,0.53,0.68,0.08,-5.83,-1.81,Aug/05,https://tradingeconomics.com/iceland/stock-market,2026-08-06T12:18:04.601791
+stock,Europe,MBI 10,MBI 10,Index Points,9212.0,23.0,-0.25,-1.55,-2.46,-8.38,-12.46,Aug/05,https://tradingeconomics.com/macedonia/stock-market,2026-08-06T12:18:04.601851
+stock,Europe,MSE,MSE,Index Points,4147.0,15.0,0.37,1.16,0.28,9.48,6.92,Aug/05,https://tradingeconomics.com/malta/stock-market,2026-08-06T12:18:04.601909
+stock,Europe,Monex,Monex,Index Points,17518.02,16.5,0.09,0.51,-2.4,-6.59,-0.06,Aug/05,https://tradingeconomics.com/montenegro/stock-market,2026-08-06T12:18:04.601969
+stock,Europe,DE Mid,DE Mid,Index Points,32396.95,167.71,-0.52,0.51,-2.69,5.81,4.63,Aug/05,https://tradingeconomics.com/mdax:ind,2026-08-06T12:18:04.602027
+stock,Europe,DE Small,DE Small,Index Points,18553.91,85.52,-0.46,-0.06,0.08,8.03,9.01,Aug/05,https://tradingeconomics.com/sdax:ind,2026-08-06T12:18:04.602090
+stock,Europe,Euro Stoxx Banks,Euro Stoxx Banks,Index Points,318.49,0.75,0.24,5.86,4.93,20.98,44.52,Aug/05,https://tradingeconomics.com/sx7e:ind,2026-08-06T12:18:04.602153
+stock,America,US500,US500,Index Points,7728.76,5.21,0.07,3.91,3.0,12.9,21.9,Aug/06,https://tradingeconomics.com/united-states/stock-market,2026-08-06T12:18:04.602430
+stock,America,US30,US30,Index Points,54457.0,108.0,0.2,4.31,2.89,13.3,23.85,Aug/06,https://tradingeconomics.com/indu:ind,2026-08-06T12:18:04.602489
+stock,America,US100,US100,Index Points,29330.0,158.0,-0.54,4.35,0.54,16.16,25.4,Aug/06,https://tradingeconomics.com/us100:ind,2026-08-06T12:18:04.602548
+stock,America,Ecuador General,Ecuador General,Index Points,1769.0,0.0,-0.02,1.32,2.74,23.64,38.22,Aug/03,https://tradingeconomics.com/ecuador/stock-market,2026-08-06T12:18:04.602611
+stock,America,TSX,TSX,Index Points,36146.0,345.0,0.96,2.3,2.65,13.98,29.46,Aug/05,https://tradingeconomics.com/canada/stock-market,2026-08-06T12:18:04.602893
+stock,America,IBOVESPA,IBOVESPA,Index Points,177726.0,169.0,-0.09,2.21,3.06,10.3,32.1,Aug/05,https://tradingeconomics.com/brazil/stock-market,2026-08-06T12:18:04.602960
+stock,America,IPC,IPC,Index Points,66525.0,308.0,-0.46,0.07,-1.4,3.51,16.4,Aug/05,https://tradingeconomics.com/mexico/stock-market,2026-08-06T12:18:04.603022
+stock,America,Merval,Merval,Index Points,3156332.0,32639.0,-1.02,-2.37,-3.4,3.43,30.69,Aug/05,https://tradingeconomics.com/argentina/stock-market,2026-08-06T12:18:04.603081
+stock,America,IBC,IBC,Index Points,5155.0,0.0,0.0,0.49,-1.96,147.55,866.67,Aug/05,https://tradingeconomics.com/venezuela/stock-market,2026-08-06T12:18:04.603182
+stock,America,COLCAP,COLCAP,Index Points,2345.0,30.0,-1.26,1.74,2.13,13.38,32.14,Aug/05,https://tradingeconomics.com/colombia/stock-market,2026-08-06T12:18:04.603259
+stock,America,IGPA,IGPA,Index Points,55204.0,226.0,-0.41,0.98,1.26,4.7,33.29,Aug/05,https://tradingeconomics.com/chile/stock-market,2026-08-06T12:18:04.603319
+stock,America,BVPSI,BVPSI,Index Points,710.0,2.0,0.34,-0.43,1.14,22.62,43.06,Aug/05,https://tradingeconomics.com/panama/stock-market,2026-08-06T12:18:04.603378
+stock,America,BSX,BSX,Index Points,3949.0,10.0,0.25,5.17,5.39,23.49,32.56,Aug/05,https://tradingeconomics.com/bermuda/stock-market,2026-08-06T12:18:04.603436
+stock,America,JSE,JSE,Index Points,376719.0,1616.0,0.43,2.42,5.03,18.47,22.78,Aug/05,https://tradingeconomics.com/jamaica/stock-market,2026-08-06T12:18:04.603496
+stock,America,US1000,US1000,Index Points,4204.36,9.33,-0.22,5.46,2.22,12.63,21.13,Aug/05,https://tradingeconomics.com/riy:ind,2026-08-06T12:18:04.603556
+stock,Asia,JP225,JP225,Index Points,65534.0,766.0,-1.16,5.93,-3.99,30.18,59.61,Aug/06,https://tradingeconomics.com/japan/stock-market,2026-08-06T12:18:04.604040
+stock,Asia,SHANGHAI,SHANGHAI,Index Points,3894.0,16.0,0.41,2.36,-2.4,-1.88,7.0,Aug/06,https://tradingeconomics.com/china/stock-market,2026-08-06T12:18:04.604102
+stock,Asia,CSI 300,CSI 300,Index Points,4642.0,16.0,-0.35,2.03,-3.14,0.26,12.82,Aug/06,https://tradingeconomics.com/shsz300:ind,2026-08-06T12:18:04.604164
+stock,Asia,SHANGHAI 50,SHANGHAI 50,Index Points,2916.0,9.0,-0.29,-0.37,-0.22,-3.81,4.19,Aug/06,https://tradingeconomics.com/sse50:ind,2026-08-06T12:18:04.604258
+stock,Asia,CH50,CH50,Index Points,14945.06,30.97,-0.21,1.06,-1.15,-2.37,7.19,Aug/06,https://tradingeconomics.com/xin9:ind,2026-08-06T12:18:04.604367
+stock,Asia,SENSEX,SENSEX,Index Points,78850.0,269.0,0.34,1.18,0.86,-7.48,-2.2,Aug/06,https://tradingeconomics.com/india/stock-market,2026-08-06T12:18:04.604476
+stock,Asia,DSE Broad,DSE Broad,Index Points,5887.0,7.0,-0.12,-0.23,1.43,21.0,7.6,Aug/06,https://tradingeconomics.com/bangladesh/stock-market,2026-08-06T12:18:04.604582
+stock,Asia,JCI,JCI,Index Points,6359.0,8.0,0.12,2.79,6.22,-26.46,-15.1,Aug/06,https://tradingeconomics.com/indonesia/stock-market,2026-08-06T12:18:04.604683
+stock,Asia,TASI,TASI,Index Points,10888.0,29.0,0.27,3.26,0.69,3.78,-0.54,Aug/05,https://tradingeconomics.com/saudi-arabia/stock-market,2026-08-06T12:18:04.604757
+stock,Asia,TSI,TSI,Index Points,44426.0,1039.0,2.4,11.25,-2.32,53.38,85.08,Aug/06,https://tradingeconomics.com/taiwan/stock-market,2026-08-06T12:18:04.604823
+stock,Asia,ADX General,ADX General,Index Points,10111.0,0.0,0.0,2.76,1.91,1.19,-2.11,Aug/06,https://tradingeconomics.com/united-arab-emirates/stock-market,2026-08-06T12:18:04.604885
+stock,Asia,SET 50,SET 50,Index Points,1087.0,9.0,0.87,1.26,3.04,30.04,31.7,Aug/06,https://tradingeconomics.com/thailand/stock-market,2026-08-06T12:18:04.604945
+stock,Asia,FKLCI,FKLCI,Index Points,1739.0,9.0,-0.52,1.09,3.34,3.51,12.26,Aug/06,https://tradingeconomics.com/malaysia/stock-market,2026-08-06T12:18:04.605006
+stock,Asia,STI,STI,Index Points,5626.0,45.0,0.81,-0.83,5.32,21.1,32.13,Aug/06,https://tradingeconomics.com/singapore/stock-market,2026-08-06T12:18:04.605070
+stock,Asia,TA-125,TA-125,Index Points,4023.0,27.0,-0.68,0.96,-2.93,9.82,35.17,Aug/05,https://tradingeconomics.com/israel/stock-market,2026-08-06T12:18:04.605130
+stock,Asia,HK50,HK50,Index Points,25461.0,455.0,-1.75,-1.54,8.36,-0.66,1.51,Aug/06,https://tradingeconomics.com/hong-kong/stock-market,2026-08-06T12:18:04.605190
+stock,Asia,PSEi,PSEi,Index Points,6249.0,37.0,-0.59,-0.89,0.04,3.25,-1.81,Aug/06,https://tradingeconomics.com/philippines/stock-market,2026-08-06T12:18:04.605249
+stock,Asia,KSE 100,KSE 100,Index Points,181288.0,1273.0,0.71,3.27,-2.67,4.16,24.47,Aug/06,https://tradingeconomics.com/pakistan/stock-market,2026-08-06T12:18:04.605309
+stock,Asia,KASE,KASE,Index Points,7888.0,13.0,0.17,1.98,2.42,12.18,22.71,Aug/06,https://tradingeconomics.com/kazakhstan/stock-market,2026-08-06T12:18:04.605367
+stock,Asia,QE,QE,Index Points,10182.0,89.0,0.88,1.75,-0.83,-5.4,-10.1,Aug/05,https://tradingeconomics.com/qatar/stock-market,2026-08-06T12:18:04.605427
+stock,Asia,HNX,HNX,Index Points,290.78,2.81,-0.96,5.72,-1.01,16.89,7.35,Aug/06,https://tradingeconomics.com/vhindex:ind,2026-08-06T12:18:04.605485
+stock,Asia,VN,VN,Index Points,1772.0,5.0,-0.27,1.55,-4.14,-0.72,12.0,Aug/06,https://tradingeconomics.com/vietnam/stock-market,2026-08-06T12:18:04.605546
+stock,Asia,MSM 30,MSM 30,Index Points,7341.0,8.0,-0.11,0.88,-3.97,25.13,51.37,Aug/06,https://tradingeconomics.com/oman/stock-market,2026-08-06T12:18:04.605617
+stock,Asia,ASPI,ASPI,Index Points,21266.0,99.0,0.47,0.55,-3.17,-6.0,7.26,Aug/06,https://tradingeconomics.com/sri-lanka/stock-market,2026-08-06T12:18:04.605683
+stock,Asia,Blom,Blom,Index Points,1772.0,0.0,0.0,2.38,-1.42,-9.89,-12.46,Aug/06,https://tradingeconomics.com/lebanon/stock-market,2026-08-06T12:18:04.605744
+stock,Asia,ASE,ASE,Index Points,3969.0,18.0,-0.45,-0.24,2.86,9.9,36.96,Aug/05,https://tradingeconomics.com/jordan/stock-market,2026-08-06T12:18:04.605807
+stock,Asia,LSX Composite,LSX Composite,Index Points,1321.0,8.0,-0.59,-1.66,-2.12,5.89,-10.06,Aug/06,https://tradingeconomics.com/laos/stock-market,2026-08-06T12:18:04.605869
+stock,Asia,MSE 20,MSE 20,Index Points,54630.0,318.0,-0.58,-0.24,6.42,0.28,11.52,Aug/06,https://tradingeconomics.com/mongolia/stock-market,2026-08-06T12:18:04.605928
+stock,Asia,DFM General,DFM General,Index Points,6008.0,22.0,0.36,3.64,-1.36,-0.65,-2.41,Aug/05,https://tradingeconomics.com/dfmgi:ind,2026-08-06T12:18:04.605989
+stock,Asia,Kuwait All Share,Kuwait All Share,Index Points,8876.76,29.67,0.34,1.54,1.58,-0.35,3.69,Aug/05,https://tradingeconomics.com/kuwait/stock-market,2026-08-06T12:18:04.606049
+stock,Asia,JPVIX,JPVIX,Index Points,33.07,1.2,-3.5,-16.32,-11.48,39.12,25.22,Aug/05,https://tradingeconomics.com/vxj:ind,2026-08-06T12:18:04.606109
+stock,Asia,NIFTY 50,NIFTY 50,Index Points,24648.0,24.0,0.1,1.36,1.02,-5.67,0.21,Aug/06,https://tradingeconomics.com/nifty:ind,2026-08-06T12:18:04.606167
+stock,Asia,Estirad,Estirad,Index Points,1965.23,8.99,0.46,0.28,-2.89,-4.9,1.01,Aug/05,https://tradingeconomics.com/bahrain/stock-market,2026-08-06T12:18:04.606226
+stock,Oceania,ASX All Share,ASX All Share,Index Points,9452.0,47.0,0.5,3.61,4.97,4.8,3.85,Aug/06,https://tradingeconomics.com/as30:ind,2026-08-06T12:18:04.606387
+stock,Oceania,ASX200,ASX200,Index Points,9272.0,44.0,0.47,3.39,5.31,6.4,4.98,Aug/06,https://tradingeconomics.com/australia/stock-market,2026-08-06T12:18:04.606447
+stock,Oceania,AU50,AU50,Index Points,9075.0,24.0,0.27,2.63,5.41,8.81,5.55,Aug/06,https://tradingeconomics.com/as52:ind,2026-08-06T12:18:04.606506
+stock,Oceania,NZX 50,NZX 50,Index Points,13935.0,63.0,-0.45,1.25,1.25,2.85,8.13,Aug/06,https://tradingeconomics.com/new-zealand/stock-market,2026-08-06T12:18:04.606567
+stock,Africa,NSE All Share,NSE All Share,Index Points,244912.0,109.0,0.04,-0.84,4.58,57.39,67.96,Aug/05,https://tradingeconomics.com/nigeria/stock-market,2026-08-06T12:18:04.606841
+stock,Africa,SAALL,SAALL,Index Points,115416.0,1159.0,1.01,4.51,3.82,-0.36,15.24,Aug/05,https://tradingeconomics.com/south-africa/stock-market,2026-08-06T12:18:04.606901
+stock,Africa,SA40,SA40,Index Points,107377.0,1176.0,1.11,4.93,4.46,-0.56,15.8,Aug/05,https://tradingeconomics.com/top40:ind,2026-08-06T12:18:04.606960
+stock,Africa,EGX 30,EGX 30,Index Points,54660.0,158.0,0.29,1.92,4.11,30.67,54.06,Aug/05,https://tradingeconomics.com/egypt/stock-market,2026-08-06T12:18:04.607021
+stock,Africa,CFG 25,CFG 25,Index Points,18330.0,267.0,1.48,3.33,-0.38,-2.74,-6.88,Aug/05,https://tradingeconomics.com/morocco/stock-market,2026-08-06T12:18:04.607079
+stock,Africa,Nairobi 20,Nairobi 20,Index Points,4163.0,10.0,-0.25,2.79,8.29,32.62,64.88,Aug/05,https://tradingeconomics.com/kenya/stock-market,2026-08-06T12:18:04.607137
+stock,Africa,Nairobi All Share,Nairobi All Share,Index Points,234.0,4.0,-1.62,-0.53,2.74,25.64,47.21,Aug/05,https://tradingeconomics.com/nseasi:ind,2026-08-06T12:18:04.607198
+stock,Africa,DSEI,DSEI,Index Points,4189.0,0.0,0.0,0.38,2.1,51.67,66.37,Aug/06,https://tradingeconomics.com/tanzania/stock-market,2026-08-06T12:18:04.607256
+stock,Africa,TUN,TUN,Index Points,20156.0,31.0,-0.15,0.8,1.65,49.86,71.55,Aug/05,https://tradingeconomics.com/tunisia/stock-market,2026-08-06T12:18:04.607320
+stock,Africa,GGSECI,GGSECI,Index Points,15222.0,163.0,-1.06,-1.06,3.48,73.52,112.42,Aug/05,https://tradingeconomics.com/ghana/stock-market,2026-08-06T12:18:04.607380
+stock,Africa,SEMDEX,SEMDEX,Index Points,2281.0,0.0,0.02,-0.5,1.5,-4.24,-6.24,Aug/06,https://tradingeconomics.com/mauritius/stock-market,2026-08-06T12:18:04.607440
+stock,Africa,USE All Share,USE All Share,Index Points,2206.82,5.68,0.26,0.9,4.93,36.06,63.03,Aug/03,https://tradingeconomics.com/uganda/stock-market,2026-08-06T12:18:04.607498
+stock,Africa,NSX Overall,NSX Overall,Index Points,2425.0,7.0,0.28,5.81,3.86,13.27,38.33,Aug/05,https://tradingeconomics.com/namibia/stock-market,2026-08-06T12:18:04.607555
+stock,Africa,Gaborone,Gaborone,Index Points,11188.0,0.0,0.0,0.0,0.27,1.43,6.52,Aug/03,https://tradingeconomics.com/botswana/stock-market,2026-08-06T12:18:04.607623
+stock,Africa,ZSI Industrials,ZSI Industrials,Index Points,472.24,0.63,-0.13,1.06,10.53,75.5,129.64,Aug/05,https://tradingeconomics.com/zimbabwe/stock-market,2026-08-06T12:18:04.607682
+commodity,Energy,Crude Oil,Crude Oil,USD/Bbl,75.568,0.348,0.46,-9.6,7.28,31.61,18.3,Aug/06,https://tradingeconomics.com/commodity/crude-oil,2026-08-06T12:18:04.897448
+commodity,Energy,Brent,Brent,USD/Bbl,79.983,0.533,0.67,-7.94,7.85,31.44,20.4,Aug/06,https://tradingeconomics.com/commodity/brent-crude-oil,2026-08-06T12:18:04.897524
+commodity,Energy,Natural gas,Natural gas,USD/MMBtu,2.7001,0.0121,0.45,-2.1,-17.3,-26.75,-11.96,Aug/06,https://tradingeconomics.com/commodity/natural-gas,2026-08-06T12:18:04.897584
+commodity,Energy,Gasoline,Gasoline,USD/Gal,2.8405,0.0017,0.06,-9.29,-3.84,66.02,37.18,Aug/06,https://tradingeconomics.com/commodity/gasoline,2026-08-06T12:18:04.897650
+commodity,Energy,Heating Oil,Heating Oil,USD/Gal,3.7937,0.0025,-0.07,-8.12,14.9,78.82,67.36,Aug/06,https://tradingeconomics.com/commodity/heating-oil,2026-08-06T12:18:04.897710
+commodity,Energy,Coal,Coal,USD/T,128.8,2.05,-1.57,-1.08,0.31,19.81,12.49,Aug/05,https://tradingeconomics.com/commodity/coal,2026-08-06T12:18:04.897768
+commodity,Energy,EU Gas,EU Gas,EUR/MWh,54.2,1.79,3.42,-7.07,15.79,92.45,64.48,Aug/06,https://tradingeconomics.com/commodity/eu-natural-gas,2026-08-06T12:18:04.897822
+commodity,Energy,UK Gas,UK Gas,GBp/thm,132.7535,4.7135,3.68,-6.82,19.87,79.86,63.81,Aug/06,https://tradingeconomics.com/commodity/uk-natural-gas,2026-08-06T12:18:04.897874
+commodity,Energy,Ethanol,Ethanol,USD/Gal,1.9325,0.0,0.0,-1.4,0.65,21.73,8.87,Aug/05,https://tradingeconomics.com/commodity/ethanol,2026-08-06T12:18:04.897927
+commodity,Energy,Naphtha,Naphtha,USD/T,668.77,14.47,-2.12,-14.51,8.45,36.94,21.38,Aug/05,https://tradingeconomics.com/commodity/naphtha,2026-08-06T12:18:04.897981
+commodity,Energy,Propane,Propane,USD/Gal,0.67,0.0,0.08,-7.24,-3.54,5.99,-0.72,Aug/05,https://tradingeconomics.com/commodity/propane,2026-08-06T12:18:04.898037
+commodity,Energy,Uranium,Uranium,USD/Lbs,86.35,0.05,0.06,-0.29,0.99,5.76,19.35,Aug/05,https://tradingeconomics.com/commodity/uranium,2026-08-06T12:18:04.898096
+commodity,Energy,Methanol,Methanol,CNY/T,2500.0,80.0,-3.1,-4.58,5.57,14.16,4.34,Aug/05,https://tradingeconomics.com/commodity/methanol,2026-08-06T12:18:04.898149
+commodity,Energy,Coking Coal,Coking Coal,USD/T,215.0,2.5,1.18,-5.08,-8.38,-1.6,8.59,Aug/05,https://tradingeconomics.com/commodity/coking-coal,2026-08-06T12:18:04.898202
+commodity,Energy,LNG JKM,LNG JKM,USD/MMBTU,20.92,0.26,-1.23,-2.4,30.19,117.75,75.31,Aug/05,https://tradingeconomics.com/commodity/liquefied-natural-gas-japan-korea,2026-08-06T12:18:04.898256
+commodity,Energy,German Gas,German Gas,EUR/MWh,53.62,3.34,-5.86,-11.83,18.55,78.73,52.98,Aug/05,https://tradingeconomics.com/commodity/germany-natural-gas-the,2026-08-06T12:18:04.898313
+commodity,Energy,Urals Oil,Urals Oil,USD/Bbl,76.24,0.98,1.3,6.04,45.25,51.15,19.26,Aug/05,https://tradingeconomics.com/commodity/urals-oil,2026-08-06T12:18:04.898366
+commodity,Metals,Gold,Gold,USD/t.oz,4254.27,6.87,0.16,3.68,3.62,-1.52,25.3,Aug/06,https://tradingeconomics.com/commodity/gold,2026-08-06T12:18:04.898605
+commodity,Metals,Silver,Silver,USD/t.oz,61.672,0.349,-0.56,4.52,2.88,-13.46,61.11,Aug/06,https://tradingeconomics.com/commodity/silver,2026-08-06T12:18:04.898658
+commodity,Metals,Copper,Copper,USD/Lbs,6.6828,0.0202,-0.3,3.7,8.28,17.61,51.77,Aug/06,https://tradingeconomics.com/commodity/copper,2026-08-06T12:18:04.898713
+commodity,Metals,Steel,Steel,CNY/T,3005.0,2.0,-0.07,0.47,-1.57,-2.94,-6.53,Aug/06,https://tradingeconomics.com/commodity/steel,2026-08-06T12:18:04.898767
+commodity,Metals,Lithium,Lithium,CNY/T,141500.0,1250.0,0.89,-3.08,-13.98,19.41,99.02,Aug/06,https://tradingeconomics.com/commodity/lithium,2026-08-06T12:18:04.898822
+commodity,Metals,Iron Ore CNY,Iron Ore CNY,CNY/T,715.0,9.0,1.27,0.0,-2.79,-9.44,-7.74,Aug/06,https://tradingeconomics.com/commodity/iron-ore-cny,2026-08-06T12:18:04.898875
+commodity,Metals,Platinum,Platinum,USD/t.oz,1759.9,13.0,0.74,6.01,5.83,-14.98,30.34,Aug/06,https://tradingeconomics.com/commodity/platinum,2026-08-06T12:18:04.898926
+commodity,Metals,Cobalt Hydroxide,Cobalt Hydroxide,USD/MT,51269.98,1334.23,2.67,-4.46,-5.85,-10.83,65.82,Aug/05,https://tradingeconomics.com/commodity/cobalt-hydroxide,2026-08-06T12:18:04.898980
+commodity,Metals,HRC Steel,HRC Steel,USD/T,1194.93,1.93,0.16,0.16,2.66,27.8,42.59,Aug/06,https://tradingeconomics.com/commodity/hrc-steel,2026-08-06T12:18:04.899033
+commodity,Metals,Scrap Aluminum,Scrap Aluminum,USD/T,2416.27,16.54,0.69,2.14,5.59,0.55,10.93,Aug/04,https://tradingeconomics.com/commodity/scrap-aluminum,2026-08-06T12:18:04.899089
+commodity,Metals,Iron Ore,Iron Ore,USD/T,93.91,0.21,0.22,-4.44,-4.47,-12.34,-6.95,Aug/05,https://tradingeconomics.com/commodity/iron-ore,2026-08-06T12:18:04.899142
+commodity,Metals,Silicon,Silicon,CNY/T,8370.0,0.0,0.0,2.7,0.84,-4.62,-2.79,Aug/06,https://tradingeconomics.com/commodity/silicon,2026-08-06T12:18:04.899195
+commodity,Metals,Scrap Steel,Scrap Steel,USD/T,380.0,10.5,-2.69,-4.28,1.33,3.97,8.42,Aug/04,https://tradingeconomics.com/commodity/scrap-steel,2026-08-06T12:18:04.899250
+commodity,Metals,Titanium,Titanium,CNY/KG,44.5,0.0,0.0,-2.2,-4.3,-3.26,-9.18,Aug/06,https://tradingeconomics.com/commodity/titanium,2026-08-06T12:18:04.899303
+commodity,Agricultural,Soybeans,Soybeans,USd/Bu,1153.62,2.12,0.18,-2.01,-3.6,11.95,18.72,Aug/06,https://tradingeconomics.com/commodity/soybeans,2026-08-06T12:18:04.899623
+commodity,Agricultural,Wheat,Wheat,USd/Bu,643.58,1.33,0.21,-3.0,5.63,26.94,24.18,Aug/06,https://tradingeconomics.com/commodity/wheat,2026-08-06T12:18:04.899679
+commodity,Agricultural,Lumber,Lumber,USD/1000 board feet,579.5,7.0,-1.19,-8.6,-6.83,7.61,-13.51,Aug/05,https://tradingeconomics.com/commodity/lumber,2026-08-06T12:18:04.899732
+commodity,Agricultural,Palm Oil,Palm Oil,MYR/T,4702.0,6.0,0.13,0.81,3.34,16.1,10.19,Aug/05,https://tradingeconomics.com/commodity/palm-oil,2026-08-06T12:18:04.899785
+commodity,Agricultural,Cheese,Cheese,USD/Lbs,1.6321,0.0029,-0.18,-0.24,1.69,12.71,-7.74,Aug/06,https://tradingeconomics.com/commodity/cheese,2026-08-06T12:18:04.899856
+commodity,Agricultural,Milk,Milk,USD/CWT,16.64,0.04,0.24,6.39,6.67,9.33,-4.15,Aug/06,https://tradingeconomics.com/commodity/milk,2026-08-06T12:18:04.899914
+commodity,Agricultural,Rubber,Rubber,USD Cents / Kg,216.9,5.9,2.8,-0.09,2.5,20.57,29.42,Aug/05,https://tradingeconomics.com/commodity/rubber,2026-08-06T12:18:04.899973
+commodity,Agricultural,Orange Juice,Orange Juice,USd/Lbs,157.7,2.0,-1.25,14.32,-5.43,-23.15,-32.27,Aug/05,https://tradingeconomics.com/commodity/orange-juice,2026-08-06T12:18:04.900030
+commodity,Agricultural,Coffee,Coffee,USd/Lbs,311.45,2.65,0.86,-4.4,-11.0,-10.7,6.15,Aug/05,https://tradingeconomics.com/commodity/coffee,2026-08-06T12:18:04.900087
+commodity,Agricultural,Cotton,Cotton,USd/Lbs,83.152,0.132,0.16,3.08,2.29,29.38,28.27,Aug/06,https://tradingeconomics.com/commodity/cotton,2026-08-06T12:18:04.900144
+commodity,Agricultural,Rice,Rice,USD/cwt,14.055,0.09,0.64,2.11,6.36,46.48,10.63,Aug/06,https://tradingeconomics.com/commodity/rice,2026-08-06T12:18:04.900202
+commodity,Agricultural,Canola,Canola,CAD/T,763.78,2.22,-0.29,-0.63,0.42,29.59,12.77,Aug/06,https://tradingeconomics.com/commodity/canola,2026-08-06T12:18:04.900258
+commodity,Agricultural,Oat,Oat,USd/Bu,315.5118,0.9882,-0.31,1.13,7.32,4.3,-4.97,Aug/06,https://tradingeconomics.com/commodity/oat,2026-08-06T12:18:04.900314
+commodity,Agricultural,Wool,Wool,AUD/100Kg,1873.0,0.0,0.0,0.0,-1.63,21.54,51.17,Aug/06,https://tradingeconomics.com/commodity/wool,2026-08-06T12:18:04.900370
+commodity,Agricultural,Sugar,Sugar,USd/Lbs,15.15,0.11,0.73,4.48,-0.46,0.93,-5.37,Aug/05,https://tradingeconomics.com/commodity/sugar,2026-08-06T12:18:04.900425
+commodity,Agricultural,Cocoa,Cocoa,USD/T,5882.0,42.0,-0.71,13.44,3.3,-3.02,-30.55,Aug/05,https://tradingeconomics.com/commodity/cocoa,2026-08-06T12:18:04.900480
+commodity,Agricultural,Tea,Tea,INR/Kgs,212.14,9.67,-4.36,-4.36,-9.7,15.75,4.05,Jul/25,https://tradingeconomics.com/commodity/tea,2026-08-06T12:18:04.900539
+commodity,Agricultural,Sunflower Oil,Sunflower Oil,INR/10 kg,1666.7,3.1,-0.19,0.32,5.2,15.57,29.21,Aug/05,https://tradingeconomics.com/commodity/sunflower-oil,2026-08-06T12:18:04.900595
+commodity,Agricultural,Rapeseed,Rapeseed,EUR/T,523.5,4.75,0.92,-1.46,0.72,15.5,11.44,Aug/05,https://tradingeconomics.com/commodity/rapeseed-oil,2026-08-06T12:18:04.900651
+commodity,Agricultural,Barley,Barley,INR/T,2281.0,45.0,2.01,6.17,6.17,-0.5,-2.12,Aug/05,https://tradingeconomics.com/commodity/barley,2026-08-06T12:18:04.900706
+commodity,Agricultural,Butter,Butter,EUR/T,4020.0,20.0,-0.5,-0.59,2.68,-3.13,-44.21,Aug/05,https://tradingeconomics.com/commodity/butter,2026-08-06T12:18:04.900764
+commodity,Agricultural,Corn,Corn,USd/BU,438.0522,1.3022,0.3,-1.73,-1.01,-0.5,13.93,Aug/06,https://tradingeconomics.com/commodity/corn,2026-08-06T12:18:04.900832
+commodity,Industrial,Bitumen,Bitumen,CNY/T,3909.0,49.0,1.27,-5.37,5.88,28.75,11.43,Aug/06,https://tradingeconomics.com/commodity/bitumen,2026-08-06T12:18:04.901211
+commodity,Industrial,Cobalt,Cobalt,USD/T,56290.0,0.0,0.0,0.0,0.0,5.5,68.86,Aug/05,https://tradingeconomics.com/commodity/cobalt,2026-08-06T12:18:04.901267
+commodity,Industrial,Lead,Lead,USD/T,1888.05,3.33,-0.18,-0.61,-0.17,-5.84,-5.95,Aug/06,https://tradingeconomics.com/commodity/lead,2026-08-06T12:18:04.901321
+commodity,Industrial,Aluminum,Aluminum,USD/T,3242.5,7.15,-0.22,2.01,4.22,8.23,23.55,Aug/06,https://tradingeconomics.com/commodity/aluminum,2026-08-06T12:18:04.901375
+commodity,Industrial,Tin,Tin,USD/T,55989.0,543.0,0.98,4.49,5.51,38.05,68.36,Aug/04,https://tradingeconomics.com/commodity/tin,2026-08-06T12:18:04.901429
+commodity,Industrial,Zinc,Zinc,USD/T,3735.45,6.35,0.17,3.26,4.49,19.66,32.6,Aug/06,https://tradingeconomics.com/commodity/zinc,2026-08-06T12:18:04.901484
+commodity,Industrial,Nickel,Nickel,USD/T,16672.0,468.0,-2.73,-3.71,2.44,-0.47,10.3,Aug/06,https://tradingeconomics.com/commodity/nickel,2026-08-06T12:18:04.901539
+commodity,Industrial,Molybdenum,Molybdenum,CNY/Kg,617.5,0.0,0.0,0.0,1.65,36.46,26.67,Aug/06,https://tradingeconomics.com/commodity/molybden,2026-08-06T12:18:04.901593
+commodity,Industrial,Palladium,Palladium,USD/t.oz,1376.0,6.0,0.44,5.16,7.37,-16.68,18.98,Aug/06,https://tradingeconomics.com/commodity/palladium,2026-08-06T12:18:04.901659
+commodity,Industrial,Rhodium,Rhodium,USD/t oz.,8525.0,0.0,0.0,3.33,3.33,-7.08,21.35,Aug/06,https://tradingeconomics.com/commodity/rhodium,2026-08-06T12:18:04.901714
+commodity,Industrial,Phosphorus,Phosphorus,CNY/T,1026.0,0.0,0.0,-0.19,-0.19,0.1,0.12,Aug/06,https://tradingeconomics.com/commodity/phosphorus,2026-08-06T12:18:04.901768
+commodity,Industrial,Polyethylene,Polyethylene,CNY/T,7497.0,136.0,-1.78,-3.63,7.62,19.0,2.67,Aug/06,https://tradingeconomics.com/commodity/polyethylene,2026-08-06T12:18:04.901838
+commodity,Industrial,Polyvinyl,Polyvinyl,CNY/T,4460.0,13.0,0.29,-0.62,0.47,-1.61,-11.6,Aug/06,https://tradingeconomics.com/commodity/polyvinyl,2026-08-06T12:18:04.901894
+commodity,Industrial,Polypropylene,Polypropylene,CNY/T,7896.0,243.0,-2.99,-4.76,6.99,26.64,11.62,Aug/06,https://tradingeconomics.com/commodity/polypropylene,2026-08-06T12:18:04.901947
+commodity,Industrial,Synthetic Rubber,Synthetic Rubber,CNY/T,13400.0,16.67,-0.12,-0.99,7.63,15.77,11.59,Aug/05,https://tradingeconomics.com/commodity/synthetic-rubber,2026-08-06T12:18:04.902000
+commodity,Industrial,Soda Ash,Soda Ash,CNY/T,1030.0,0.0,0.0,-6.36,-8.04,-17.6,-18.9,Aug/05,https://tradingeconomics.com/commodity/soda-ash,2026-08-06T12:18:04.902055
+commodity,Industrial,Neodymium,Neodymium,CNY/T,975000.0,0.0,0.0,-1.02,-3.94,29.57,48.86,Aug/06,https://tradingeconomics.com/commodity/neodymium,2026-08-06T12:18:04.902108
+commodity,Industrial,Styrene,Styrene,CNY/MT,8700.0,80.0,0.93,0.69,17.89,28.7,14.93,Aug/05,https://tradingeconomics.com/commodity/styrene,2026-08-06T12:18:04.902160
+commodity,Industrial,Sulfur,Sulfur,CNY/T,9169.0,0.0,0.0,0.92,2.61,150.45,258.49,Aug/05,https://tradingeconomics.com/commodity/sulfur,2026-08-06T12:18:04.902217
+commodity,Industrial,Tellurium,Tellurium,CNY/Kg,812.5,0.0,0.0,0.0,-0.91,11.3,34.3,Aug/06,https://tradingeconomics.com/commodity/tellurium,2026-08-06T12:18:04.902270
+commodity,Industrial,Urea,Urea,USD/T,390.0,12.5,-3.11,-11.06,3.45,0.91,-13.04,Aug/05,https://tradingeconomics.com/commodity/urea,2026-08-06T12:18:04.902323
+commodity,Industrial,Di-ammonium,Di-ammonium,USD/T,795.0,3.0,-0.38,-0.93,6.0,27.2,-1.36,Aug/05,https://tradingeconomics.com/commodity/di-ammonium,2026-08-06T12:18:04.902376
+commodity,Industrial,Magnesium,Magnesium,CNY/T,16900.0,0.0,0.0,-0.59,1.2,1.5,-6.63,Aug/06,https://tradingeconomics.com/commodity/magnesium,2026-08-06T12:18:04.902429
+commodity,Industrial,Gallium,Gallium,CNY/Kg,1825.0,0.0,0.0,0.0,-7.59,10.61,12.31,Aug/06,https://tradingeconomics.com/commodity/gallium,2026-08-06T12:18:04.902482
+commodity,Industrial,Germanium,Germanium,CNY/Kg,24000.0,250.0,1.05,1.05,3.23,77.78,63.82,Aug/06,https://tradingeconomics.com/commodity/germanium,2026-08-06T12:18:04.902536
+commodity,Industrial,Manganese,Manganese,CNY/mtu,28.75,0.0,0.0,-1.03,-5.58,-4.96,-3.36,Aug/06,https://tradingeconomics.com/commodity/manganese,2026-08-06T12:18:04.902589
+commodity,Industrial,Indium,Indium,CNY/Kg,5500.0,0.0,0.0,0.0,-0.9,94.69,109.52,Aug/06,https://tradingeconomics.com/commodity/indium,2026-08-06T12:18:04.902643
+commodity,Industrial,Kraft Pulp,Kraft Pulp,CNY/T,4666.0,22.0,0.47,-2.67,-1.39,-14.79,-8.65,Aug/05,https://tradingeconomics.com/commodity/kraft-pulp,2026-08-06T12:18:04.902696
+commodity,Livestock,Feeder Cattle,Feeder Cattle,USd/Lbs,353.325,2.125,0.61,2.63,-1.99,0.88,2.41,Aug/05,https://tradingeconomics.com/commodity/feeder-cattle,2026-08-06T12:18:04.902901
+commodity,Livestock,Live Cattle,Live Cattle,USd/Lbs,234.175,2.225,0.96,2.75,-2.06,1.11,-0.9,Aug/05,https://tradingeconomics.com/commodity/live-cattle,2026-08-06T12:18:04.902957
+commodity,Livestock,Lean Hogs,Lean Hogs,USd/Lbs,96.6,1.25,-1.28,-4.05,3.48,13.51,-11.27,Aug/05,https://tradingeconomics.com/commodity/lean-hogs,2026-08-06T12:18:04.903018
+commodity,Livestock,Beef,Beef,BRL/15KG,348.55,1.65,-0.47,0.33,6.77,9.19,14.54,Aug/05,https://tradingeconomics.com/commodity/beef,2026-08-06T12:18:04.903076
+commodity,Livestock,Poultry,Poultry,BRL/Kgs,7.15,0.25,3.62,-0.14,-0.42,-12.16,-3.77,Aug/05,https://tradingeconomics.com/commodity/poultry,2026-08-06T12:18:04.903134
+commodity,Livestock,Eggs US,Eggs US,USD/Dozen,1.01,0.04,-3.58,-11.13,270.52,65.06,-63.26,Aug/05,https://tradingeconomics.com/commodity/eggs-us,2026-08-06T12:18:04.903191
+commodity,Livestock,Eggs CH,Eggs CH,CNY/T,4062.0,51.0,1.27,-0.9,-12.87,38.59,21.18,Aug/05,https://tradingeconomics.com/commodity/eggs-ch,2026-08-06T12:18:04.903251
+commodity,Livestock,Salmon,Salmon,NOK/KG,72.79,0.71,0.99,0.99,-2.22,-4.06,1.56,Jul/31,https://tradingeconomics.com/commodity/salmon,2026-08-06T12:18:04.903314
+commodity,Index,CRB Index,CRB Index,Index Points,479.85,1.4,0.29,-2.78,3.69,28.13,32.68,Aug/05,https://tradingeconomics.com/commodity/crb,2026-08-06T12:18:04.903504
+commodity,Index,GSCI,GSCI,Index Points,655.11,0.03,0.01,-4.19,3.75,19.43,21.58,Aug/06,https://tradingeconomics.com/commodity/gsci,2026-08-06T12:18:04.903566
+commodity,Index,SSE Commodity Index,SSE Commodity Index,Index Points,7203.96,94.05,-1.29,-1.2,4.29,-10.09,-12.68,Aug/06,https://tradingeconomics.com/commodity/consume-commodity-index,2026-08-06T12:18:04.903636
+commodity,Index,Containerized Freight Index,Containerized Freight Index,Points,3205.97,0.0,0.0,4.67,-3.63,93.56,106.74,Aug/06,https://tradingeconomics.com/commodity/containerized-freight-index,2026-08-06T12:18:04.903694
+commodity,Index,EU Carbon Permits,EU Carbon Permits,EUR,81.53,0.43,0.53,-0.6,-0.32,-6.68,14.85,Aug/06,https://tradingeconomics.com/commodity/carbon,2026-08-06T12:18:04.903757
+commodity,Index,Wind Energy Index,Wind Energy Index,USD,23.45,0.47,-1.96,1.56,-5.79,14.67,22.9,Aug/05,https://tradingeconomics.com/commodity/wind,2026-08-06T12:18:04.903812
+commodity,Index,Nuclear Energy Index,Nuclear Energy Index,USD,43.1,0.14,0.33,8.4,3.21,0.16,5.9,Aug/06,https://tradingeconomics.com/commodity/nuclear,2026-08-06T12:18:04.903867
+commodity,Index,Solar Energy Index,Solar Energy Index,USD,51.0,0.2,0.39,2.64,-7.59,3.95,39.46,Aug/06,https://tradingeconomics.com/commodity/solar,2026-08-06T12:18:04.903927
+commodity,Electricity,United Kingdom,United Kingdom,GBP/MWh,110.33,5.67,-4.89,-9.89,15.53,34.65,41.27,Aug/05,https://tradingeconomics.com/united-kingdom/electricity-price,2026-08-06T12:18:04.904085
+commodity,Electricity,Germany,Germany,EUR/MWh,118.94,4.44,-3.6,14.84,22.24,21.68,51.09,Aug/05,https://tradingeconomics.com/germany/electricity-price,2026-08-06T12:18:04.904140
+commodity,Electricity,France,France,EUR/MWh,60.38,2.21,-3.53,-8.61,4.12,19.21,-2.61,Aug/05,https://tradingeconomics.com/france/electricity-price,2026-08-06T12:18:04.904196
+commodity,Electricity,Italy,Italy,EUR/MWh,198.35,9.5,-4.57,8.72,39.33,80.54,75.22,Aug/06,https://tradingeconomics.com/italy/electricity-price,2026-08-06T12:18:04.904251
+commodity,Electricity,Spain,Spain,EUR/MWh,109.51,9.4,-7.91,-14.81,-3.9,11.95,30.28,Aug/06,https://tradingeconomics.com/spain/electricity-price,2026-08-06T12:18:04.904314

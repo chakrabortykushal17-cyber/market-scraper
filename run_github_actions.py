@@ -1,0 +1,173 @@
+"""
+run_github_actions.py — GitHub Actions Cloud Scraper Runner
+===========================================================
+Runs in GitHub Actions cloud environment.
+Reads credentials from Environment Variables (GitHub Secrets).
+Scrapes TradingEconomics and pushes to MilesWeb MySQL.
+"""
+
+import os
+import sys
+import time
+from datetime import datetime
+
+# Import pymysql
+try:
+    import pymysql
+except ImportError:
+    print("[ERROR] pymysql is not installed.")
+    sys.exit(1)
+
+# Import scraper
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from scraper import TradingEconomicsScraper, get_market_summary
+
+# ── Configuration (Reads from Environment Variables / GitHub Secrets) ──────────
+DB_HOST = os.getenv("DB_HOST", "45.199.139.15")
+DB_PORT = int(os.getenv("DB_PORT", "3306"))
+DB_USER = os.getenv("DB_USER", "financei1_financeintels")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "Myogoku@2026")
+DB_NAME = os.getenv("DB_NAME", "financei1_db")
+
+SCRAPE_INTERVAL = int(os.getenv("SCRAPE_INTERVAL", "15"))  # seconds between cycles
+MAX_RUNTIME_MINUTES = int(os.getenv("MAX_RUNTIME_MINUTES", "30"))  # runtime per GitHub Action job
+
+
+def get_connection():
+    return pymysql.connect(
+        host=DB_HOST,
+        port=DB_PORT,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME,
+        autocommit=True,
+        cursorclass=pymysql.cursors.DictCursor,
+        connect_timeout=15,
+    )
+
+
+def init_tables(conn):
+    with conn.cursor() as cur:
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS scraped_market_data (
+                id               BIGINT AUTO_INCREMENT PRIMARY KEY,
+                item_type        VARCHAR(20),
+                category         VARCHAR(100),
+                name             VARCHAR(200) NOT NULL,
+                symbol           VARCHAR(200) NOT NULL,
+                unit             VARCHAR(50),
+                price            DOUBLE,
+                change_val       DOUBLE,
+                change_percent   DOUBLE,
+                weekly_percent   DOUBLE,
+                monthly_percent  DOUBLE,
+                ytd_percent      DOUBLE,
+                yoy_percent      DOUBLE,
+                market_date      VARCHAR(50),
+                source_url       TEXT,
+                scraped_at       DATETIME DEFAULT CURRENT_TIMESTAMP,
+                INDEX idx_symbol (symbol(150)),
+                INDEX idx_scraped_at (scraped_at)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        """)
+
+
+def push_data(conn, items):
+    if not items:
+        return 0
+
+    sql = """
+        INSERT INTO scraped_market_data
+            (item_type, category, name, symbol, unit, price, change_val, change_percent,
+             weekly_percent, monthly_percent, ytd_percent, yoy_percent,
+             market_date, source_url, scraped_at)
+        VALUES
+            (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    """
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    count = 0
+    with conn.cursor() as cur:
+        for item in items:
+            name = item.get("name") or item.get("symbol") or ""
+            if not name:
+                continue
+            cur.execute(sql, (
+                item.get("type", "stock"),
+                item.get("category", "General"),
+                name,
+                name,
+                item.get("unit", ""),
+                item.get("price"),
+                item.get("change"),
+                item.get("change_percent"),
+                item.get("weekly_percent"),
+                item.get("monthly_percent"),
+                item.get("ytd_percent"),
+                item.get("yoy_percent"),
+                item.get("date", ""),
+                item.get("url", ""),
+                now,
+            ))
+            count += 1
+    return count
+
+
+def run_cycle(scraper):
+    stocks = scraper.scrape_stocks()
+    commodities = scraper.scrape_commodities()
+    crypto = scraper.scrape_crypto()
+    return stocks + commodities + crypto
+
+
+def main():
+    print("=" * 65)
+    print("  GitHub Actions Cloud Scraper — TradingEconomics to MilesWeb")
+    print(f"  Interval: {SCRAPE_INTERVAL}s | Target Server: {DB_HOST}")
+    print("=" * 65)
+
+    scraper = TradingEconomicsScraper()
+    start_time = time.time()
+    max_duration_seconds = MAX_RUNTIME_MINUTES * 60
+    cycle = 0
+
+    while True:
+        elapsed = time.time() - start_time
+        if elapsed >= max_duration_seconds:
+            print(f"\n[DONE] Reached target job duration ({MAX_RUNTIME_MINUTES} mins). Exiting cleanly.")
+            break
+
+        cycle += 1
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"\n[{ts}] ── Cycle #{cycle} (Elapsed: {int(elapsed)}s/{max_duration_seconds}s) ──")
+
+        try:
+            print("  Scraping TradingEconomics (Stocks, Commodities, Crypto)...")
+            data = run_cycle(scraper)
+            print(f"  ✓ Scraped {len(data)} items successfully.")
+
+            if not data:
+                print("  [WARN] No data scraped. Retrying next cycle.")
+                time.sleep(SCRAPE_INTERVAL)
+                continue
+
+            print("  Connecting to MilesWeb MySQL...")
+            conn = get_connection()
+            init_tables(conn)
+            inserted = push_data(conn, data)
+            conn.close()
+            print(f"  ✓ Successfully pushed {inserted} records to MySQL!")
+
+            summary = get_market_summary(data)
+            print(f"  Summary: {summary.get('gainers_count', 0)} Gainers | "
+                  f"{summary.get('losers_count', 0)} Losers | "
+                  f"Avg Change: {summary.get('avg_change_percent', 0.0)}%")
+
+        except Exception as e:
+            print(f"  [ERROR] {e}")
+
+        print(f"  Sleeping {SCRAPE_INTERVAL}s until next cycle...")
+        time.sleep(SCRAPE_INTERVAL)
+
+
+if __name__ == "__main__":
+    main()
