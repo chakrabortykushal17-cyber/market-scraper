@@ -111,6 +111,92 @@ def upsert_data(conn, items):
     """
 
     import random
+    from zoneinfo import ZoneInfo
+
+    STOCK_SESSIONS = {
+        'sensex': ('Asia/Kolkata', '09:15', '15:30', [0, 1, 2, 3, 4]),
+        'nifty': ('Asia/Kolkata', '09:15', '15:30', [0, 1, 2, 3, 4]),
+        'nikkei': ('Asia/Tokyo', '09:00', '15:30', [0, 1, 2, 3, 4]),
+        'jp225': ('Asia/Tokyo', '09:00', '15:30', [0, 1, 2, 3, 4]),
+        'topix': ('Asia/Tokyo', '09:00', '15:30', [0, 1, 2, 3, 4]),
+        'shanghai': ('Asia/Shanghai', '09:30', '15:00', [0, 1, 2, 3, 4]),
+        'shenzhen': ('Asia/Shanghai', '09:30', '15:00', [0, 1, 2, 3, 4]),
+        'csi 300': ('Asia/Shanghai', '09:30', '15:00', [0, 1, 2, 3, 4]),
+        'hang seng': ('Asia/Hong_Kong', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'hk50': ('Asia/Hong_Kong', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'kospi': ('Asia/Seoul', '09:00', '15:30', [0, 1, 2, 3, 4]),
+        'asx': ('Australia/Sydney', '10:00', '16:00', [0, 1, 2, 3, 4]),
+        'taiex': ('Asia/Taipei', '09:00', '13:30', [0, 1, 2, 3, 4]),
+        'tsi': ('Asia/Taipei', '09:00', '13:30', [0, 1, 2, 3, 4]),
+        'sti': ('Asia/Singapore', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'klci': ('Asia/Kuala_Lumpur', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'fklci': ('Asia/Kuala_Lumpur', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'psei': ('Asia/Manila', '09:30', '15:00', [0, 1, 2, 3, 4]),
+        'jci': ('Asia/Jakarta', '09:00', '16:00', [0, 1, 2, 3, 4]),
+        'set': ('Asia/Bangkok', '10:00', '16:30', [0, 1, 2, 3, 4]),
+        'vn': ('Asia/Ho_Chi_Minh', '09:00', '15:00', [0, 1, 2, 3, 4]),
+        'nzx': ('Pacific/Auckland', '10:00', '17:00', [0, 1, 2, 3, 4]),
+        'sp500': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        's&p 500': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'us500': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'nasdaq': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'us100': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'dow jones': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'us30': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'russell': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'us1000': ('America/New_York', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'tsx': ('America/Toronto', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'bovespa': ('America/Sao_Paulo', '10:00', '17:55', [0, 1, 2, 3, 4]),
+        'ibovespa': ('America/Sao_Paulo', '10:00', '17:55', [0, 1, 2, 3, 4]),
+        'ipc': ('America/Mexico_City', '08:30', '15:00', [0, 1, 2, 3, 4]),
+        'merval': ('America/Argentina/Buenos_Aires', '11:00', '17:00', [0, 1, 2, 3, 4]),
+        'ipsa': ('America/Santiago', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'igpa': ('America/Santiago', '09:30', '16:00', [0, 1, 2, 3, 4]),
+        'colcap': ('America/Bogota', '08:30', '15:00', [0, 1, 2, 3, 4]),
+        'de40': ('Europe/Berlin', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'dax': ('Europe/Berlin', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'gb100': ('Europe/London', '08:00', '16:30', [0, 1, 2, 3, 4]),
+        'ftse': ('Europe/London', '08:00', '16:30', [0, 1, 2, 3, 4]),
+        'fr40': ('Europe/Paris', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'cac': ('Europe/Paris', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'eu50': ('Europe/Berlin', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'it40': ('Europe/Rome', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'es35': ('Europe/Madrid', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'ch20': ('Europe/Zurich', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'nl30': ('Europe/Amsterdam', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'aex': ('Europe/Amsterdam', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'bel20': ('Europe/Brussels', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'be20': ('Europe/Brussels', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'stockholm': ('Europe/Stockholm', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'copenhagen': ('Europe/Copenhagen', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'helsinki': ('Europe/Helsinki', '10:00', '18:30', [0, 1, 2, 3, 4]),
+        'wig': ('Europe/Warsaw', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'atx': ('Europe/Vienna', '09:00', '17:30', [0, 1, 2, 3, 4]),
+        'moex': ('Europe/Moscow', '10:00', '18:50', [0, 1, 2, 3, 4]),
+        'tasi': ('Asia/Riyadh', '10:00', '15:00', [6, 0, 1, 2, 3]),
+        'dfm': ('Asia/Dubai', '10:00', '15:00', [0, 1, 2, 3, 4]),
+        'adx': ('Asia/Dubai', '10:00', '15:00', [0, 1, 2, 3, 4]),
+        'qe': ('Asia/Qatar', '09:30', '13:15', [6, 0, 1, 2, 3]),
+        'egx': ('Africa/Cairo', '10:00', '14:30', [6, 0, 1, 2, 3]),
+        'sa40': ('Africa/Johannesburg', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'jse': ('Africa/Johannesburg', '09:00', '17:00', [0, 1, 2, 3, 4]),
+        'ta-125': ('Asia/Jerusalem', '10:00', '17:30', [6, 0, 1, 2, 3]),
+        'bist': ('Europe/Istanbul', '10:00', '18:00', [0, 1, 2, 3, 4]),
+    }
+
+    def is_stock_market_open(name):
+        low = name.lower()
+        for k, (tz, op, cl, days) in STOCK_SESSIONS.items():
+            if k in low:
+                try:
+                    now = datetime.now(ZoneInfo(tz))
+                    day = now.weekday()
+                    hm = now.strftime('%H:%M')
+                    return (day in days and op <= hm <= cl)
+                except Exception:
+                    return False
+        return False
+
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     count = 0
     with conn.cursor() as cur:
@@ -122,8 +208,13 @@ def upsert_data(conn, items):
             raw_price = item.get("price")
             chg = item.get("change") or 0.0
             chg_pct = item.get("change_percent") or 0.0
+            item_type = item.get("type", "stock")
 
-            if raw_price is not None and isinstance(raw_price, (int, float)) and raw_price > 0:
+            is_open = True
+            if item_type == "stock":
+                is_open = is_stock_market_open(name)
+
+            if is_open and raw_price is not None and isinstance(raw_price, (int, float)) and raw_price > 0:
                 jitter = (random.random() - 0.495) * (raw_price * 0.00022)
                 p_final = round(raw_price + jitter, 4 if raw_price < 5 else 2)
                 p_diff = p_final - raw_price
