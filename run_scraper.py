@@ -24,7 +24,7 @@ if sys.platform == "win32":
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace', line_buffering=True)
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-SCRAPE_INTERVAL = 15  # seconds between scrape cycles
+SCRAPE_INTERVAL = 7  # seconds between scrape cycles
 
 # Remote MilesWeb MySQL — matches your stock_scraper.php credentials
 DB_CONFIG = {

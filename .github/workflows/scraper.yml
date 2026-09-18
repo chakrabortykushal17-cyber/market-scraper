@@ -47,7 +47,7 @@ jobs:
           DB_USER: ${{ secrets.DB_USER || 'financei1_financeintels' }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD || 'Myogoku@2026' }}
           DB_NAME: ${{ secrets.DB_NAME || 'financei1_db' }}
-          SCRAPE_INTERVAL: '15'
+          SCRAPE_INTERVAL: '7'
           MAX_RUNTIME_MINUTES: '330'
         run: |
           if [ -d "stock scrapper" ]; then
