@@ -29,7 +29,7 @@ DB_USER = os.getenv("DB_USER", "financei1_financeintels")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "Myogoku@2026")
 DB_NAME = os.getenv("DB_NAME", "financei1_db")
 
-SCRAPE_INTERVAL = int(os.getenv("SCRAPE_INTERVAL", "7"))  # seconds between cycles
+SCRAPE_INTERVAL = int(os.getenv("SCRAPE_INTERVAL", "3"))  # seconds between cycles
 MAX_RUNTIME_MINUTES = int(os.getenv("MAX_RUNTIME_MINUTES", "330"))  # 5.5 hours runtime per job
 
 
