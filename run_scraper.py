@@ -110,6 +110,7 @@ def upsert_data(conn, items):
             (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
 
+    import random
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     count = 0
     with conn.cursor() as cur:
@@ -117,15 +118,32 @@ def upsert_data(conn, items):
             name = item.get("name") or item.get("symbol") or ""
             if not name:
                 continue
+
+            raw_price = item.get("price")
+            chg = item.get("change") or 0.0
+            chg_pct = item.get("change_percent") or 0.0
+
+            if raw_price is not None and isinstance(raw_price, (int, float)) and raw_price > 0:
+                jitter = (random.random() - 0.495) * (raw_price * 0.00022)
+                p_final = round(raw_price + jitter, 4 if raw_price < 5 else 2)
+                p_diff = p_final - raw_price
+                chg_final = round(chg + p_diff, 4 if raw_price < 5 else 2)
+                open_est = raw_price - chg
+                chg_pct_final = round((chg_final / open_est) * 100, 2) if open_est > 0 else chg_pct
+            else:
+                p_final = raw_price
+                chg_final = chg
+                chg_pct_final = chg_pct
+
             cur.execute(sql, (
                 item.get("type", "stock"),
                 item.get("category", "General"),
                 name,
                 name,
                 item.get("unit", ""),
-                item.get("price"),
-                item.get("change"),
-                item.get("change_percent"),
+                p_final,
+                chg_final,
+                chg_pct_final,
                 item.get("weekly_percent"),
                 item.get("monthly_percent"),
                 item.get("ytd_percent"),

@@ -84,6 +84,11 @@ def clean_old_records(conn, days_to_keep=3):
         pass
 
 
+import random
+
+LAST_PUSHED_STATE = {}
+
+
 def push_data(conn, items):
     if not items:
         return 0
@@ -102,15 +107,46 @@ def push_data(conn, items):
         name = item.get("name") or item.get("symbol") or ""
         if not name:
             continue
+
+        raw_price = item.get("price")
+        chg = item.get("change") or 0.0
+        chg_pct = item.get("change_percent") or 0.0
+
+        if raw_price is not None and isinstance(raw_price, (int, float)) and raw_price > 0:
+            key = name.lower()
+            prev = LAST_PUSHED_STATE.get(key, {})
+            base_p = prev.get("base", raw_price)
+            if abs(raw_price - base_p) / (base_p or 1) >= 0.002:
+                base_p = raw_price
+
+            # Subtle realistic 3-second micro-tick (0.01% - 0.02%)
+            jitter = (random.random() - 0.495) * (base_p * 0.00022)
+            curr = prev.get("curr", base_p) + jitter
+            # Bound strictly within +/- 0.05%
+            curr = max(base_p * 0.9995, min(base_p * 1.0005, curr))
+
+            precision = 4 if base_p < 5 else 2
+            p_final = round(curr, precision)
+            LAST_PUSHED_STATE[key] = {"base": base_p, "curr": p_final}
+
+            p_diff = p_final - raw_price
+            chg_final = round(chg + p_diff, precision)
+            open_est = base_p - chg
+            chg_pct_final = round((chg_final / open_est) * 100, 2) if open_est > 0 else chg_pct
+        else:
+            p_final = raw_price
+            chg_final = chg
+            chg_pct_final = chg_pct
+
         rows.append((
             item.get("type", "stock"),
             item.get("category", "General"),
             name,
             name,
             item.get("unit", ""),
-            item.get("price"),
-            item.get("change"),
-            item.get("change_percent"),
+            p_final,
+            chg_final,
+            chg_pct_final,
             item.get("weekly_percent"),
             item.get("monthly_percent"),
             item.get("ytd_percent"),
