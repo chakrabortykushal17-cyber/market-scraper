@@ -272,6 +272,60 @@ class TradingEconomicsScraper:
                     "scraped_at": datetime.now().isoformat()
                 })
 
+        # Supplement major benchmark indices not listed in TradingEconomics stocks table
+        if items:
+            existing_names = {x['name'].upper() for x in items}
+            supplements = {
+                'KOSPI': ('^KS11', 'Asia-Pacific', 'Index Points'),
+                'NIFTY BANK': ('^NSEBANK', 'Asia-Pacific', 'Index Points'),
+                'SHENZHEN': ('399001.SZ', 'Asia-Pacific', 'Index Points'),
+                'TOPIX': ('TPY=F', 'Asia-Pacific', 'Index Points'),
+            }
+            from concurrent.futures import ThreadPoolExecutor
+            def fetch_supplement(entry):
+                name, (sym, cat, unit) = entry
+                if name in existing_names:
+                    return None
+                try:
+                    url = f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=1d'
+                    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
+                    with urllib.request.urlopen(req, timeout=3) as resp:
+                        data = json.loads(resp.read().decode('utf-8'))
+                        meta = data['chart']['result'][0]['meta']
+                        p = meta.get('regularMarketPrice')
+                        prev = meta.get('previousClose') or meta.get('chartPreviousClose') or p
+                        if p is not None:
+                            chg = round(p - prev, 2) if prev else 0.0
+                            pct = round((chg / prev) * 100, 2) if prev else 0.0
+                            return {
+                                'type': 'stock',
+                                'category': cat,
+                                'name': name,
+                                'symbol': name,
+                                'unit': unit,
+                                'price': p,
+                                'change': chg,
+                                'change_percent': pct,
+                                'weekly_percent': 0.0,
+                                'monthly_percent': 0.0,
+                                'ytd_percent': 0.0,
+                                'yoy_percent': 0.0,
+                                'date': datetime.now().strftime('%b/%d'),
+                                'url': f'https://finance.yahoo.com/quote/{sym}',
+                                'scraped_at': datetime.now().isoformat()
+                            }
+                except Exception:
+                    pass
+                return None
+
+            try:
+                with ThreadPoolExecutor(max_workers=3) as pool:
+                    for res in pool.map(fetch_supplement, supplements.items()):
+                        if res:
+                            items.append(res)
+            except Exception:
+                pass
+
         return items if items else self._scrape_stocks_fallback()
 
     def _scrape_commodities_fallback(self):
