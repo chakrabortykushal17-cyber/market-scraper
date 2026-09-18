@@ -85,31 +85,35 @@ def push_data(conn, items):
             (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    count = 0
+    rows = []
+    for item in items:
+        name = item.get("name") or item.get("symbol") or ""
+        if not name:
+            continue
+        rows.append((
+            item.get("type", "stock"),
+            item.get("category", "General"),
+            name,
+            name,
+            item.get("unit", ""),
+            item.get("price"),
+            item.get("change"),
+            item.get("change_percent"),
+            item.get("weekly_percent"),
+            item.get("monthly_percent"),
+            item.get("ytd_percent"),
+            item.get("yoy_percent"),
+            item.get("date", ""),
+            item.get("url", ""),
+            now,
+        ))
+
+    if not rows:
+        return 0
+
     with conn.cursor() as cur:
-        for item in items:
-            name = item.get("name") or item.get("symbol") or ""
-            if not name:
-                continue
-            cur.execute(sql, (
-                item.get("type", "stock"),
-                item.get("category", "General"),
-                name,
-                name,
-                item.get("unit", ""),
-                item.get("price"),
-                item.get("change"),
-                item.get("change_percent"),
-                item.get("weekly_percent"),
-                item.get("monthly_percent"),
-                item.get("ytd_percent"),
-                item.get("yoy_percent"),
-                item.get("date", ""),
-                item.get("url", ""),
-                now,
-            ))
-            count += 1
-    return count
+        cur.executemany(sql, rows)
+    return len(rows)
 
 
 def run_cycle(scraper):
@@ -130,6 +134,16 @@ def main():
     max_duration_seconds = MAX_RUNTIME_MINUTES * 60
     cycle = 0
 
+    # Initialize connection and tables ONCE at startup
+    print("  Connecting to MilesWeb MySQL (persistent connection)...")
+    conn = None
+    try:
+        conn = get_connection()
+        init_tables(conn)
+        print("  ✓ Database connected and tables verified.")
+    except Exception as e:
+        print(f"  [DB INIT WARNING] {e} — will retry during cycle loop.")
+
     while True:
         elapsed = time.time() - start_time
         if elapsed >= max_duration_seconds:
@@ -142,20 +156,27 @@ def main():
 
         try:
             print("  Scraping TradingEconomics (Stocks, Commodities, Crypto)...")
+            t_scrape = time.time()
             data = run_cycle(scraper)
-            print(f"  ✓ Scraped {len(data)} items successfully.")
+            print(f"  ✓ Scraped {len(data)} items in {time.time() - t_scrape:.1f}s.")
 
             if not data:
                 print("  [WARN] No data scraped. Retrying next cycle.")
                 time.sleep(SCRAPE_INTERVAL)
                 continue
 
-            print("  Connecting to MilesWeb MySQL...")
-            conn = get_connection()
-            init_tables(conn)
+            # Ensure connection is active (ping with auto-reconnect)
+            if conn is None:
+                conn = get_connection()
+            else:
+                try:
+                    conn.ping(reconnect=True)
+                except Exception:
+                    conn = get_connection()
+
+            t_push = time.time()
             inserted = push_data(conn, data)
-            conn.close()
-            print(f"  ✓ Successfully pushed {inserted} records to MySQL!")
+            print(f"  ✓ Pushed {inserted} records in {time.time() - t_push:.2f}s!")
 
             summary = get_market_summary(data)
             print(f"  Summary: {summary.get('gainers_count', 0)} Gainers | "
@@ -167,6 +188,12 @@ def main():
 
         print(f"  Sleeping {SCRAPE_INTERVAL}s until next cycle...")
         time.sleep(SCRAPE_INTERVAL)
+
+    if conn:
+        try:
+            conn.close()
+        except Exception:
+            pass
 
 
 if __name__ == "__main__":
